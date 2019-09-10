@@ -25,3 +25,11 @@ spec:
     mariadb:
       persistence:
         enabled: false
+
+
+helm upgrade -i flux \
+--set helmOperator.create=true \
+--set helmOperator.createCRD=false \
+--set git.url=git@github.com:etataurov/flux-get-started \
+--namespace flux \
+fluxcd/flux
